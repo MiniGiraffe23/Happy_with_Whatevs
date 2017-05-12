@@ -6,5 +6,6 @@ class CreateGuesses < ActiveRecord::Migration[5.0]
       t.boolean  :correct, default: false
 
       t.timestamps null: false
+    end
   end
 end
