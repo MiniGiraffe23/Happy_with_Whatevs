@@ -16,9 +16,9 @@ class User < ApplicationRecord
   end
 
   def self.authenticate(user = {})
-    @user = self.find_by(email: params[:email])
+    @user = self.find_by(email: user[:email])
 
-    if @user.password == params[:password]
+    if @user.password == user[:password]
       @user
     else
       nil
