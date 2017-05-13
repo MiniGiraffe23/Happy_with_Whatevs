@@ -3,16 +3,6 @@
 
 
 
-<% if params[:user_guess] %>
-  <% if params[:user_guess] == @card.answer %>
-    <h1>YAY CORRECT</h1>
-    <% else %>
-    <h1>WRONG</h1>
-  <% end %>
-
-<% end %>
-
-
 <br>
 <p>Question:</p>
 <p><%= @card.question %></p>
@@ -25,5 +15,12 @@
  </form>
 
 
+<% if params[:user_guess] %>
+  <% if params[:user_guess] == @card.answer %>
+    <h1>YAY CORRECT</h1>
+    <% else %>
+    <h1>WRONG</h1>
+  <% end %>
 
+<% end %>
 
