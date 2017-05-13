@@ -2,5 +2,5 @@
 <br>
 <h2>Select a deck:</h2>
 <ul><% @decks.each do |deck| %>
-  <li><a href='/decks/<%=deck.id%>/cards'><%= deck.topic %></a></li>
+  <li><a href='/decks/<%=deck.id%>/cards/next'><%= deck.topic %></a></li>
   <% end %></ul>

@@ -1,12 +1,29 @@
 <h1></h1>
+
+
+
+
+<% if params[:user_guess] %>
+  <% if params[:user_guess] == @card.answer %>
+    <h1>YAY CORRECT</h1>
+    <% else %>
+    <h1>WRONG</h1>
+  <% end %>
+
+<% end %>
+
+
 <br>
 <p>Question:</p>
 <p><%= @card.question %></p>
 <br>
 <form method='post' action="/decks/<%=@deck.id%>/cards/<%=@card.id%>">
+  <input name="_method" type="hidden" value="put"/>
   Answer:<br>
   <input type="text" name="user_guess">
   <input type="submit" value="Submit">
  </form>
+
+
 
 
