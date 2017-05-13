@@ -18,11 +18,17 @@
   <title></title>
 </head>
 <body>
-  <a href='/login'>Sign in</a>
-  <a href='/logout'>Sign out</a>
-  <a href='/users/:id'>User profile</a>
-
-  <br>
+    <a href='/decks'>Home</a>
+    <br>
+    <% if logged_in? %>
+      <a href='/logout'>Sign out</a>
+      <br>
+      <a href='PLACEHOLDER FOR ROUTE'>USERNAME</a>
+     <% else %>
+      <a href= '/login'>Sign in</a>
+      <br>
+      <a href='/users/new'>Register</a>
+    <% end %>
   <%= yield %>
 </body>
 </html>
