@@ -14,6 +14,10 @@ post '/users/index' do
 end
 
 get '/users/:id' do
+  if logged_in?
   @user = User.find_by(session[:id])
   erb :'/users/show'
+  else
+    redirect '/login'
+  end
 end
