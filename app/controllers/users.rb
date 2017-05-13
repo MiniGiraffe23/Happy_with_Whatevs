@@ -14,7 +14,6 @@ post '/users/index' do
 end
 
 get '/users/:id' do
-
   @user = User.find_by(session[:id])
   erb :'/users/show'
 end
