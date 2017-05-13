@@ -17,6 +17,10 @@ post '/login' do
   else
     redirect '/login'
   end
+end
 
 
+get '/logout' do
+  session.delete(:user_id)
+  redirect '/decks'
 end
