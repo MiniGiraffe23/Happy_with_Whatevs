@@ -4,6 +4,7 @@ class CreateGuesses < ActiveRecord::Migration[5.0]
       t.integer  :card_id
       t.integer  :round_id
       t.boolean  :correct, default: false
+      t.integer  :number_correct
 
       t.timestamps null: false
     end
