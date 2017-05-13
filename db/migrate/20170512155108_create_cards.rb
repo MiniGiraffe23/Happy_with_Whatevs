@@ -4,7 +4,7 @@ class CreateCards < ActiveRecord::Migration[5.0]
       t.string  :question
       t.string  :answer
       t.boolean :viewed, default: false
-      t.string  :correct_guess
+      # t.string  :correct_guess
       t.integer :deck_id
 
       t.timestamps null: false
