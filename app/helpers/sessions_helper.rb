@@ -6,4 +6,12 @@ helpers do
   def logged_in?
     session[:user_id] != nil # returns true if value is not nil
   end
+
+  def deck # method to create session with deck
+    session[:deck]
+  end
+
+  def start_deck # method to start round with deck selected
+    session[:deck] = @round.deck_id
+  end
 end
