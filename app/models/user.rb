@@ -4,24 +4,25 @@ class User < ApplicationRecord
   has_many :guesses, through: :rounds
 
   validates :email, presence: true, uniqueness: true
-end
 
-def password
-  @password = BCrypt::Password.new(encrypted_password)
-end
 
-def password=(new_password)
-  @password = BCrypt::Password.create(new_password)
-  self.encrypted_password = @password
-end
+  def password
+    @password = BCrypt::Password.new(encrypted_password)
+  end
 
-self.authenticate(user = {})
-  @user = self.find_by(email: params[:email])
+  def password=(new_password)
+    @password = BCrypt::Password.create(new_password)
+    self.encrypted_password = @password
+  end
 
-  if @user.password == params[:password]
-    @user
-  else
-    nil
+  def self.authenticate(user = {})
+    @user = self.find_by(email: params[:email])
+
+    if @user.password == params[:password]
+      @user
+    else
+      nil
+    end
   end
 end
 
